@@ -25,7 +25,8 @@ for i in $(find . -name ".git" | cut -c 3-); do
     if git remote get-url upstream
     then
       # finally pull
-      git fetch --all;
+      git fetch --all
+      git checkout master
       git merge upstream/master
       # and push it to the origin branch;
       git push;
