@@ -1,0 +1,16 @@
+#!/usr/bin/env xdg-open
+# In .local/share/applications
+[Desktop Entry]
+Encoding=UTF-8
+Name=RubyMine
+Type=Application
+Icon=/home/sergio/Programs/RubyMine-latest/bin/RMlogo.svg
+Exec=/home/sergio/Programs/RubyMine-latest/bin/rubymine.sh %U
+Terminal=false
+Categories=Application;Development;
+Actions=Open;
+
+[Desktop Action Open]
+Name=Open
+Exec=/home/sergio/Programs/RubyMine-latest/bin/rubymine.sh
+

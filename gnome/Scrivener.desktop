@@ -1,0 +1,16 @@
+#!/usr/bin/env xdg-open
+# In .local/share/applications
+[Desktop Entry]
+Encoding=UTF-8
+Name=Scrivener
+Type=Application
+Icon=/home/sergio/.local/share/icons/Scrivener_Logo.png
+Exec=/home/sergio/Programs/scrivener-latest/bin/Scrivener %U
+Terminal=false
+Categories=Application;Office;
+Actions=Open;
+
+[Desktop Action Open]
+Name=Open
+Exec=/home/sergio/Programs/scrivener-latest/bin/scrivener.sh
+
