@@ -4,13 +4,8 @@
 Encoding=UTF-8
 Name=RubyMine
 Type=Application
-Icon=/home/sergio/Programs/RubyMine-latest/bin/RMlogo.svg
-Exec=/home/sergio/Programs/RubyMine-latest/bin/rubymine.sh %U
+Icon=~/Programs/RubyMine-latest/bin/RMlogo.svg
+Exec=~/Programs/RubyMine-latest/bin/rubymine.sh %F
 Terminal=false
-Categories=Application;Development;
-Actions=Open;
-
-[Desktop Action Open]
-Name=Open
-Exec=/home/sergio/Programs/RubyMine-latest/bin/rubymine.sh
+Categories=Development;IDE
 

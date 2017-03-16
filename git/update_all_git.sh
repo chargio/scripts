@@ -45,9 +45,9 @@ for i in $(find . -name ".git" | cut -c 3-); do
       unset NEED_TO_STASH
       git stash
       if [ $? -eq 0 ]; then STASH="true"; fi
-      git merge upstream/master
+      git merge upstream/master --ff-only
       # and push it to the origin branch;
-      git push;
+      git push --mirror
       # go to the original branch
       git checkout $BRANCH
       if [ $NEED_TO_STASH ]; then git stash pop; unset NEED_TO_STASH; fi
