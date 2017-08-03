@@ -1,0 +1,11 @@
+source /usr/local/etc/bash_completion.d/git-prompt.sh
+export CLICOLOR=yes
+export LANG=en_US.UTF-8
+GIT_PS1_SHOWDIRTYSTATE=true
+export PS1='[\u@sergio \w$(__git_ps1)]\$ '
+#export PS1="\[\033[32m\]\@ \[\033[33m\]\w\$(__git_ps1 \" (\[\033[36m\]%s\[\033[33m\])\")\$"
+eval "$(rbenv init -)"
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+fi
+PATH=$PATH:~/bin
