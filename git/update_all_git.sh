@@ -36,7 +36,7 @@ for i in $(find . -name ".git" | cut -c 3-); do
     if git remote get-url upstream
     then
       # get all branches
-      git fetch --all
+      git fetch --all --prune
       # understand which branch are we in
       BRANCH=`git rev-parse --abbrev-ref HEAD`
       # change to master
@@ -47,7 +47,7 @@ for i in $(find . -name ".git" | cut -c 3-); do
       if [ $? -eq 0 ]; then STASH="true"; fi
       git merge upstream/master --ff-only
       # and push it to the origin branch;
-      git push --mirror
+      git push 
       # go to the original branch
       git checkout $BRANCH
       if [ $NEED_TO_STASH ]; then git stash pop; unset NEED_TO_STASH; fi
@@ -56,7 +56,7 @@ for i in $(find . -name ".git" | cut -c 3-); do
       # pull origin
       git fetch --all
       # merge current branch
-      git pull
+      git pull --all
     fi
     # lets get back to the CUR_DIR
     cd $CUR_DIR
