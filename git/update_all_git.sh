@@ -35,16 +35,19 @@ for i in $(find . -name ".git" | cut -c 3-); do
 
     if git remote get-url upstream
     then
-      # get all branches
-      git fetch --all --prune
+      # get all branches using prune in origin and upstream
+      git fetch origin --prune
+      git fetch upstream --prune
+      git fetch --all
       # understand which branch are we in
       BRANCH=`git rev-parse --abbrev-ref HEAD`
-      # change to master
-      git checkout master
       # make sure NEED_TO_STASH is not set
       unset NEED_TO_STASH
       git stash
       if [ $? -eq 0 ]; then STASH="true"; fi
+      # Move to master branch
+      git checkout master
+      # Merge upstream/master into master only if -ff
       git merge upstream/master --ff-only
       # and push it to the origin branch;
       git push 
